@@ -1,0 +1,3 @@
+﻿  UIManager.cpp
+c:\users\c017916e\onedrive - staffordshire university\studio sim\shootemupengine(10102018)\shootemupengine\shootemupengine\uimanager.cpp(11): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  ShootEmUpEngine.vcxproj -> C:\Users\c017916e\OneDrive - Staffordshire University\Studio Sim\ShootEmUpEngine(10102018)\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe

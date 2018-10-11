@@ -1,0 +1,23 @@
+#include "SDL.h"
+#include "SDL_TTF.h"
+#include "EngineManager.h"
+
+
+int main(int argc, char* args[])
+{
+
+	EngineManager *engineMain = new EngineManager();
+	while (engineMain->IsRunning())
+	{
+		engineMain->HandleEvents();
+		engineMain->Update();
+		engineMain->Draw();
+	}
+
+	engineMain->Clean();
+	SDL_Quit();
+	TTF_Quit();
+
+	return 0;
+
+}
