@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="EngineManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="UILabel.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UITextBox.cpp" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="EngineManager.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="UILabel.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UITextBox.h" />
