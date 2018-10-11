@@ -12,5 +12,4 @@ c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengi
 c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengine\uitextbox.cpp(65): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
 c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengine\uitextbox.cpp(82): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
   Generating Code...
-  LINK : C:\Users\j015791e\Documents\GitHub\ShootEmUpEngine\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe not found or not built by the last incremental link; performing full link
   ShootEmUpEngine.vcxproj -> C:\Users\j015791e\Documents\GitHub\ShootEmUpEngine\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe
