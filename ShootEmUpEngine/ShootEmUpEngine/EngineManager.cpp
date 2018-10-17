@@ -8,6 +8,9 @@ EngineManager::EngineManager()
 
 	//Init UI Manager
 	_UIManager = new UIManager(window, renderer);
+
+	//Sound Manager
+	_SoundManager = SoundManager::getInstance();
 }
 
 void EngineManager::Init(const char* name, int xPosition, int yPosition, int width, int height, bool isFullscreen)
@@ -35,6 +38,7 @@ void EngineManager::Init(const char* name, int xPosition, int yPosition, int wid
 
 EngineManager::~EngineManager()
 {
+	_SoundManager->~SoundManager();
 	_UIManager->~UIManager();
 	delete _UIManager;
 }
@@ -51,6 +55,7 @@ void EngineManager::Update()
 	SDL_PollEvent(e);
 
 	_UIManager->Update(e);
+	_SoundManager->Update(e);
 
 	e = nullptr;
 
