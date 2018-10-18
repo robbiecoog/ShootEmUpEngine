@@ -38,6 +38,8 @@ public:
 
 	void PlaySFX(string filename, int loops = 0, int channel = 0);
 
+	bool test = false;
+
 };
 #endif
 

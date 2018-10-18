@@ -41,6 +41,7 @@ EngineManager::~EngineManager()
 	_SoundManager->~SoundManager();
 	_UIManager->~UIManager();
 	delete _UIManager;
+	delete _SoundManager;
 }
 
 void EngineManager::HandleEvents()
