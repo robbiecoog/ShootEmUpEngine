@@ -1,6 +1,6 @@
 #include "SoundManager.h"
 
-
+//Gets music file from the assets folder
 Mix_Music* SoundManager::GetMusic(string filename)
 {
 	string filePath = SDL_GetBasePath();
@@ -20,6 +20,7 @@ Mix_Music* SoundManager::GetMusic(string filename)
 	}
 }
 
+//Gets SFX files from the assets folder
 Mix_Chunk* SoundManager::GetSFX(string filename)
 {
 	string filePath = SDL_GetBasePath();
@@ -74,6 +75,7 @@ void SoundManager::Update(SDL_Event* e)
 	
 }
 
+//Plays the music file 
 void SoundManager::PlayMusic(string filename, int loops)
 {
 	Mix_PlayMusic(GetMusic(filename), loops);
@@ -96,6 +98,7 @@ void SoundManager::ResumeMusic()
 	}
 }
 
+//plays SFX file
 void SoundManager::PlaySFX(string filename, int loops, int channel)
 {
 	Mix_PlayChannel(-1, GetSFX(filename), loops);
