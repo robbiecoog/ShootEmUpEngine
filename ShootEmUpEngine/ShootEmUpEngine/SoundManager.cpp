@@ -51,13 +51,14 @@ SoundManager* SoundManager::getInstance()
 
 SoundManager::SoundManager()
 {
+	SDL_Event event;
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2,4096) == -1)
 	{
 		printf("Mixer Initialization Error: ", Mix_GetError());
 	}
 
 	PlayMusic("background.wav");
-	PlaySFX("background.wav");
+	PlaySFX("explosion.wav");
 }
 
 
