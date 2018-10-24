@@ -78,8 +78,8 @@
     <LibraryPath>C:\Users\c017916e\OneDrive - Staffordshire University\Studio Sim\ShootEmUpEngine\ShootEmUpEngine\SDL2-2.0.8\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\ShootEmUpEngine\SDL2_ttf-2.0.14\include;$(SolutionDir)\ShootEmUpEngine\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\ShootEmUpEngine\SDL2_ttf-2.0.14\lib\x64;$(SolutionDir)\ShootEmUpEngine\SDL2-2.0.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\ShootEmUpEngine\SDL2_mixer-2.0.2\include;$(SolutionDir)\ShootEmUpEngine\SDL2_ttf-2.0.14\include;$(SolutionDir)\ShootEmUpEngine\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\ShootEmUpEngine\SDL2_mixer-2.0.2\lib\x64;$(SolutionDir)\ShootEmUpEngine\SDL2_ttf-2.0.14\lib\x64;$(SolutionDir)\ShootEmUpEngine\SDL2-2.0.8\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Users\c017916e\OneDrive - Staffordshire University\Studio Sim\ShootEmUpEngine\ShootEmUpEngine\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
@@ -105,12 +105,17 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\ShootEmUpEngine\SDL2_ttf-2.0.14\include;$(SolutionDir)\ShootEmUpEngine\SDL2-2.0.8\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\ShootEmUpEngine\SDL2_mixer-2.0.2\include;$(SolutionDir)\ShootEmUpEngine\SDL2_ttf-2.0.14\include;$(SolutionDir)\ShootEmUpEngine\SDL2-2.0.8\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Users\c017916e\OneDrive - Staffordshire University\Studio Sim\ShootEmUpEngine\ShootEmUpEngine\SDL2-2.0.8\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+<<<<<<< HEAD
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
+=======
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+>>>>>>> origin/neil
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -152,8 +157,12 @@
   <ItemGroup>
     <ClCompile Include="EngineManager.cpp" />
     <ClCompile Include="main.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="UIButton.cpp" />
     <ClCompile Include="UISelectionBox.cpp" />
+=======
+    <ClCompile Include="SoundManager.cpp" />
+>>>>>>> origin/neil
     <ClCompile Include="UILabel.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UITextBox.cpp" />
@@ -161,8 +170,12 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="EngineManager.h" />
+<<<<<<< HEAD
     <ClInclude Include="UIButton.h" />
     <ClInclude Include="UISelectionBox.h" />
+=======
+    <ClInclude Include="SoundManager.h" />
+>>>>>>> origin/neil
     <ClInclude Include="UILabel.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UITextBox.h" />
