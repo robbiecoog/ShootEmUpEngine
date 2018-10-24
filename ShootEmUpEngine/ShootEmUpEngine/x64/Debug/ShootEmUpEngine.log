@@ -1,3 +1,15 @@
-﻿  UIManager.cpp
-c:\users\c017916e\onedrive - staffordshire university\studio sim\shootemupengine(10102018)\shootemupengine\shootemupengine\uimanager.cpp(11): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  ShootEmUpEngine.vcxproj -> C:\Users\c017916e\OneDrive - Staffordshire University\Studio Sim\ShootEmUpEngine(10102018)\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe
+﻿  EngineManager.cpp
+  main.cpp
+  UIButton.cpp
+  UISelectionBox.cpp
+  UILabel.cpp
+  UIManager.cpp
+c:\users\robbie\documents\github\robbie\shootemupengine\shootemupengine\shootemupengine\uimanager.cpp(133): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  UITextBox.cpp
+c:\users\robbie\documents\github\robbie\shootemupengine\shootemupengine\shootemupengine\uitextbox.cpp(36): warning C4150: deletion of pointer to incomplete type '_TTF_Font'; no destructor called
+  c:\users\robbie\documents\github\robbie\shootemupengine\shootemupengine\shootemupengine\sdl2_ttf-2.0.14\include\sdl_ttf.h(86): note: see declaration of '_TTF_Font'
+c:\users\robbie\documents\github\robbie\shootemupengine\shootemupengine\shootemupengine\uitextbox.cpp(68): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+c:\users\robbie\documents\github\robbie\shootemupengine\shootemupengine\shootemupengine\uitextbox.cpp(84): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
+c:\users\robbie\documents\github\robbie\shootemupengine\shootemupengine\shootemupengine\uitextbox.cpp(100): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+  Generating Code...
+  ShootEmUpEngine.vcxproj -> C:\Users\Robbie\Documents\Github\Robbie\ShootEmUpEngine\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe

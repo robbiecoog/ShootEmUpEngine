@@ -110,7 +110,7 @@
     <Link>
       <AdditionalLibraryDirectories>C:\Users\c017916e\OneDrive - Staffordshire University\Studio Sim\ShootEmUpEngine\ShootEmUpEngine\SDL2-2.0.8\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -152,6 +152,8 @@
   <ItemGroup>
     <ClCompile Include="EngineManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UIButton.cpp" />
+    <ClCompile Include="UISelectionBox.cpp" />
     <ClCompile Include="UILabel.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UITextBox.cpp" />
@@ -159,6 +161,8 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="EngineManager.h" />
+    <ClInclude Include="UIButton.h" />
+    <ClInclude Include="UISelectionBox.h" />
     <ClInclude Include="UILabel.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UITextBox.h" />
