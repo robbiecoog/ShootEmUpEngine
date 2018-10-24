@@ -5,6 +5,7 @@
 #include "SDL.h"
 #include "SDL_TTF.h"
 #include "Common.h"
+#include "SoundManager.h"
 
 class UISelectionBox//This defines a box that lists items. This can be used for selecting objects in the scene, or selecting the current level
 {

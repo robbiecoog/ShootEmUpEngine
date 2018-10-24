@@ -5,7 +5,9 @@
 #include "UILabel.h"
 #include "UISelectionBox.h"
 #include "UIButton.h"
+#include "UIScrollbar.h"
 #include "Common.h"
+#include "SoundManager.h"
 #include <vector>
 #include <iostream>
 
@@ -43,6 +45,7 @@ private:
 	std::vector<UILabel*> UILabels;
 	std::vector<UISelectionBox*> UISelectionBoxes;
 	std::vector<UIButton*> UIButtons;
+	std::vector<UIScrollbar*> UIScrollbars;
 
 	TTF_Font* defaultFont;
 

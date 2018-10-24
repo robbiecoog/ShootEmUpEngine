@@ -87,6 +87,11 @@ UIManager::UIManager(SDL_Window *window, SDL_Renderer *gameRenderer) : gameWindo
 	levelSelectionBox->AddItem(new SelectionBoxItem{ "Level 6" });
 
 
+	//add Scrollbar to bottom of view panel
+	UIScrollbar* scrollBar = new UIScrollbar(bottomRect.x, bottomRect.y - 20 + 1, bottomRect.w, 20, renderer);
+	UIScrollbars.push_back(scrollBar);
+
+
 }
 
 UIManager::~UIManager()
@@ -97,8 +102,10 @@ UIManager::~UIManager()
 	for (unsigned int i = 0; i < UILabels.size(); i++) { UILabels[i]->~UILabel(); }
 	//iterate through UISelectionBox
 	for (unsigned int i = 0; i < UISelectionBoxes.size(); i++) { UISelectionBoxes[i]->~UISelectionBox(); }
-	//iterate through buyttons
+	//iterate through buttons
 	for (unsigned int i = 0; i < UIButtons.size(); i++) { UIButtons[i]->~UIButton(); }
+	//iterate through scrollbars
+	for (unsigned int i = 0; i < UIScrollbars.size(); i++) { UIScrollbars[i]->~UIScrollbar(); }
 }
 
 void UIManager::ShowFileDialog()
@@ -159,7 +166,7 @@ void UIManager::Update(SDL_Event* e)
 	}
 
 	//check buttons
-	if (UIButtons[0]->CheckClick())//if + button is clicked
+	if (UIButtons[0]->CheckClick())//if '+' button is clicked
 	{
 		UISelectionBoxes[0]->AddItem(new SelectionBoxItem{ "New Item" });//add new item to the object list
 	}
@@ -204,6 +211,7 @@ void UIManager::Update(SDL_Event* e)
 	for (unsigned int i = 0; i < UILabels.size(); i++) { UILabels[i]->Update(e); }
 	for (unsigned int i = 0; i < UISelectionBoxes.size(); i++) { UISelectionBoxes[i]->Update(e); }
 	for (unsigned int i = 0; i < UIButtons.size(); i++) { UIButtons[i]->Update(e); }
+	for (unsigned int i = 0; i < UIScrollbars.size(); i++) { UIScrollbars[i]->Update(e); }
 
 
 
@@ -247,4 +255,5 @@ void UIManager::Draw()
 	for (unsigned int i = 0; i < UILabels.size(); i++) { UILabels[i]->Draw(); }
 	for (unsigned int i = 0; i < UISelectionBoxes.size(); i++) { UISelectionBoxes[i]->Draw(); }
 	for (unsigned int i = 0; i < UIButtons.size(); i++) { UIButtons[i]->Draw(); }
+	for (unsigned int i = 0; i < UIScrollbars.size(); i++) { UIScrollbars[i]->Draw(); }
 }

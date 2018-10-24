@@ -41,16 +41,17 @@ void UISelectionBox::AddItem(SelectionBoxItem* item)
 SelectionBoxItem* UISelectionBox::CheckSelected(int inputX, int inputY)
 {
 	bool foundSelected = false;//this will turn true if any element is found to be selected, otherwise, we can turn selectedID to -1
-	SDL_Surface* drawText = TTF_RenderText_Solid(defaultFont, "Test", textColor);//This surface is only generated to allow precise access to the width and height of the text
+	SDL_Surface* drawText = TTF_RenderText_Solid(defaultFont, "Demo", textColor);//This surface is only generated to allow precise access to the width and height of the text
 
 	if (inputX > x && inputY > y && inputX < (x + width) && inputY < (y + height))//if the mouse is within the box to begin with
 	{
 		for (int i = 0; i < items.size(); i++)
 		{
-			if (inputY > (y + drawText->h * i) && inputY <= y + drawText->h * (i+1))
+			if (inputY > (y + drawText->h * i) && inputY <= y + drawText->h * (i+1) && i != selectedID)
 			{
 				selectedID = i;
 				foundSelected = true;
+				break;
 			}
 		}
 	}

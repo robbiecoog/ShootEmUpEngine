@@ -221,7 +221,7 @@ void UITextBox::Draw()
 	{
 		SDL_SetRenderDrawColor(renderer, textColor.r, textColor.g, textColor.b, textColor.a);//set color to fill color
 		SDL_Rect line = { textRect.x + textRect.w, textRect.y + 3, 4, boxSquare.h - 6 };
-		SDL_RenderFillRect(renderer, &line);//Draw outline of text box
+		SDL_RenderFillRect(renderer, &line);
 	}
 	SDL_FreeSurface(drawText);
 	drawText = nullptr;

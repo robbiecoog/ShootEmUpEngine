@@ -58,8 +58,8 @@ SoundManager::SoundManager()
 		printf("Mixer Initialization Error: ", Mix_GetError());
 	}
 
-	PlayMusic("background.wav");
-	PlaySFX("explosion.wav");
+	//PlayMusic("background.wav");
+	//PlaySFX("explosion.wav");
 }
 
 
