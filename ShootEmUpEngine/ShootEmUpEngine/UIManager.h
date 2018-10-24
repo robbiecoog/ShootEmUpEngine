@@ -1,7 +1,11 @@
 #pragma once
 #include "SDL.h"
+#include "SDL_TTF.h"
 #include "UITextBox.h"
 #include "UILabel.h"
+#include "UISelectionBox.h"
+#include "UIButton.h"
+#include "Common.h"
 #include <vector>
 #include <iostream>
 
@@ -20,6 +24,8 @@ public:
 
 private:
 
+	void ShowFileDialog();
+
 	SDL_Window *gameWindow;
 	SDL_Renderer *renderer;
 
@@ -28,9 +34,16 @@ private:
 
 	//UI elements
 	SDL_Rect bottomRect;//rectangle at bottom of screen
-	SDL_Rect SideRect;//rectangle at side of screen
+	SDL_Rect sideRect;//rectangle at side of screen
+	SDL_Rect topRect;//rectangle at top of screen
+
+	SDL_Rect testRect;//This is used as a test for the UI elements
 
 	std::vector<UITextBox*> UITextBoxes;
 	std::vector<UILabel*> UILabels;
+	std::vector<UISelectionBox*> UISelectionBoxes;
+	std::vector<UIButton*> UIButtons;
+
+	TTF_Font* defaultFont;
 
 };
