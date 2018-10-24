@@ -30,14 +30,13 @@
     <ClCompile Include="UILabel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="UISelectionBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UIButton.cpp">
-=======
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="SoundManager.cpp">
->>>>>>> origin/neil
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
