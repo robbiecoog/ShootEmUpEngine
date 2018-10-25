@@ -4,7 +4,7 @@
 EngineManager::EngineManager()
 {
 	//initalize SDL
-	Init("Game Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1200, 800, false);
+	Init("Game Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, false);
 
 	//Init UI Manager
 	_UIManager = new UIManager(window, renderer);
@@ -38,7 +38,7 @@ void EngineManager::Init(const char* name, int xPosition, int yPosition, int wid
 
 EngineManager::~EngineManager()
 {
-	_SoundManager->~SoundManager();
+	_UIManager->~UIManager();
 	_UIManager->~UIManager();
 	delete _UIManager;
 	delete _SoundManager;
@@ -51,13 +51,20 @@ void EngineManager::HandleEvents()
 
 void EngineManager::Update()
 {
-	//as the other update functions will use events, to prevent recreation of these and interference, this is passed through
+	//as the other update functions will use events, to prevent recreation of these and prevent interference, this is passed through
 	SDL_Event* e = new SDL_Event;
 	SDL_PollEvent(e);
 
-	_UIManager->Update(e);
+	if (e->type == SDL_QUIT)//if the 'X' button in the top right is pressed, flag the game up to be not running.
+	{
+		gameIsRunning = false;
+	}
+
+
+	_UIManager->Update(e);//As UI elements will need info regarding key presses, this is passed to the update. If an object doesnt need this, dont bother passing these through.
 	_SoundManager->Update(e);
 
+	delete e;
 	e = nullptr;
 
 }

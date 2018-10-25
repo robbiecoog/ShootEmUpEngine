@@ -8,27 +8,31 @@ class UITextBox
 {
 	//This is an element of the UI. It is a field for entering data
 public:
-	UITextBox(int xPos, int yPos, int boxWidth, SDL_Renderer* gameRenderer);
-	UITextBox(int xPos, int yPos, int boxWidth, std::string inputText, SDL_Renderer* gameRenderer);
+	UITextBox(int xPos, int yPos, int boxWidth, SDL_Renderer* gameRenderer, TTF_Font* font);
+	UITextBox(int xPos, int yPos, int boxWidth, std::string inputText, SDL_Renderer* gameRenderer, TTF_Font* font);
 	~UITextBox();
 
 	void Init();
 
 	std::string GetText() { return text; }
+	void SetText(std::string input);
+
+	void SetSelected(bool input);
+	bool GetSelected() { return isSelected; }
 
 	void Update(SDL_Event* e);
 
 	void Draw();
 
-	void GetPosition(int* inputX, int* inputY);
+	int x, y, width, height;
+
 	void GetSize(int* inputW, int* inputH);
 
-	bool isSelected;
 
 private:
 	std::string text;
 
-	int maxStrLength;
+	bool canType;//If the text is about to go outside the box, dont let the user type anymore, only deleting text will turn the bool back on.
 
 	SDL_Color backColor;//fill color of the text box
 	SDL_Color boundColor;//outline color of the text box
@@ -36,15 +40,18 @@ private:
 
 	SDL_Rect boxSquare;
 
-	int x, y, width, height;
-
 	SDL_Renderer* renderer;
 
 	TTF_Font* defaultFont;
 
-	float flickerLineCounter;//a counter to flash a line at the end of the current text to the user knows the box is selected
-	float beginTick;
+	float timeCounter;
+	float deltaTime;
+	float lastFrameTick;
+	float flashingLineTimer;
 
-	void UpdateText(SDL_KeyboardEvent* key);
+	void UpdateText(SDL_Event* e);
+	
+	bool isSelected;
+
 
 };

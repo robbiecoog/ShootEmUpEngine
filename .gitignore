@@ -1,0 +1,6 @@
+
+*.obj
+ShootEmUpEngine/ShootEmUpEngine/x64/Debug/main.obj
+*.obj
+*.db
+*.log

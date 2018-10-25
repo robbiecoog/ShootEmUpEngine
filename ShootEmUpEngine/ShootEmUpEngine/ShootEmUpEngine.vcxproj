@@ -154,6 +154,8 @@
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="UIButton.cpp" />
+    <ClCompile Include="UISelectionBox.cpp" />
     <ClCompile Include="UILabel.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UITextBox.cpp" />
@@ -163,6 +165,8 @@
     <ClInclude Include="EngineManager.h" />
     <ClInclude Include="FileLoader.h" />
     <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="UIButton.h" />
+    <ClInclude Include="UISelectionBox.h" />
     <ClInclude Include="UILabel.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UITextBox.h" />
