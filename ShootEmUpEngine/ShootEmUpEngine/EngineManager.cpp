@@ -40,8 +40,11 @@ EngineManager::~EngineManager()
 {
 	_UIManager->~UIManager();
 	_UIManager->~UIManager();
+	_FileLoader->~FileLoader();
+
 	delete _UIManager;
 	delete _SoundManager;
+	delete _FileLoader;
 }
 
 void EngineManager::HandleEvents()
@@ -58,6 +61,17 @@ void EngineManager::Update()
 	if (e->type == SDL_QUIT)//if the 'X' button in the top right is pressed, flag the game up to be not running.
 	{
 		gameIsRunning = false;
+	}
+	if (e->type == SDL_KEYDOWN)
+	{
+		if (e->key.keysym.sym == SDLK_UP)
+		{
+			_FileLoader->LoadFile();
+		}
+		if (e->key.keysym.sym == SDLK_DOWN)
+		{
+			_FileLoader->SaveFile();
+		}
 	}
 
 
