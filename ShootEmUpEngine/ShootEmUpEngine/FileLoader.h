@@ -1,22 +1,24 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include "SDL_rwops.h"
+
 
 using namespace std;
 
 class FileLoader
 {
 public:
-	string state;
-	string textSave;
-	ifstream file;
-	char* buffer;
-	long fileSize;
+
+	//will be the data we are saving and loading
+	Sint32 data[20];
+	//file we are opening file for reading in binary
+	SDL_RWops* file;
+
+	bool fileOpen;
 
 	FileLoader();
 	~FileLoader();
-	void LoadFile();
-	void SaveFile();
 
 };
 

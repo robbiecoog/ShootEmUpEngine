@@ -66,11 +66,11 @@ void EngineManager::Update()
 	{
 		if (e->key.keysym.sym == SDLK_UP)
 		{
-			_FileLoader->LoadFile();
+			
 		}
 		if (e->key.keysym.sym == SDLK_DOWN)
 		{
-			_FileLoader->SaveFile();
+			
 		}
 	}
 

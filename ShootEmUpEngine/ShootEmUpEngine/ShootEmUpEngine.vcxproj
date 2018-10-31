@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EngineManager.cpp" />
+    <ClCompile Include="FileDialog.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SoundManager.cpp" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="EngineManager.h" />
+    <ClInclude Include="FileDialog.h" />
     <ClInclude Include="FileLoader.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="UIButton.h" />
