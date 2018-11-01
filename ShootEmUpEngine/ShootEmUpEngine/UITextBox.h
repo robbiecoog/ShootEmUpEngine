@@ -32,8 +32,6 @@ public:
 private:
 	std::string text;
 
-	bool canType;//If the text is about to go outside the box, dont let the user type anymore, only deleting text will turn the bool back on.
-
 	SDL_Color backColor;//fill color of the text box
 	SDL_Color boundColor;//outline color of the text box
 	SDL_Color textColor;//color of the text entered

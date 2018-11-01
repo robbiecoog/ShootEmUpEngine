@@ -35,20 +35,21 @@ void UIButton::Update(SDL_Event* e)
 	int mouseX, mouseY;
 	SDL_GetMouseState(&mouseX, &mouseY);
 
-	if (mouseX > x && mouseX < (x + width) && mouseY > y && mouseY < (y + height))//if mouse is inside this
+	switch (e->type)
 	{
-		if (SDL_GetMouseState(NULL, NULL) == SDL_BUTTON(SDL_BUTTON_LEFT))//if left mouse button is down
+	case SDL_MOUSEBUTTONDOWN:
+		if (mouseX > x && mouseX < (x + width) && mouseY > y && mouseY < (y + height) && SDL_GetMouseState(NULL, NULL) == SDL_BUTTON(SDL_BUTTON_LEFT))//if mouse is inside this and left mouse is pressed
 		{
 			isClicked = true;
 		}
-		else
+		else if (mouseX > x && mouseX < (x + width) && mouseY > y && mouseY < (y + height) == false)//if mouse is outside of the box
 		{
-			isClicked = false;
+
 		}
-	}
-	else
-	{
+		break;
+	case SDL_MOUSEBUTTONUP:
 		isClicked = false;
+		break;
 	}
 }
 

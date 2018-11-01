@@ -1,13 +1,18 @@
 #pragma once
 #include "SDL.h"
 #include "SDL_TTF.h"
+//
 #include "UITextBox.h"
 #include "UILabel.h"
 #include "UISelectionBox.h"
 #include "UIButton.h"
 #include "UIScrollbar.h"
+#include "UIDragDrop.h"
+//
 #include "Common.h"
+#include "enums.h"
 #include "SoundManager.h"
+//
 #include <vector>
 #include <iostream>
 
@@ -17,7 +22,7 @@ class UIManager
 
 
 public:
-	UIManager(SDL_Window *window, SDL_Renderer *gameRenderer);//needs a handle to the game window to be able to calculate UI dimensions
+	UIManager(bool*  gameRunning, SDL_Window *window, SDL_Renderer *gameRenderer);//needs a handle to the game window to be able to calculate UI dimensions
 	~UIManager();
 
 	void Update(SDL_Event* e);
@@ -27,6 +32,9 @@ public:
 private:
 
 	void ShowFileDialog();
+
+	void ClearObjectDetails();
+	void DisplayPlayerUI();
 
 	SDL_Window *gameWindow;
 	SDL_Renderer *renderer;
@@ -46,7 +54,10 @@ private:
 	std::vector<UISelectionBox*> UISelectionBoxes;
 	std::vector<UIButton*> UIButtons;
 	std::vector<UIScrollbar*> UIScrollbars;
+	std::vector<UIDragDrop*> UIDragDrops;
 
 	TTF_Font* defaultFont;
+
+	bool gameIsRunning;
 
 };

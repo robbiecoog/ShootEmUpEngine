@@ -21,6 +21,8 @@ public:
 	void Draw();
 
 	void AddItem(SelectionBoxItem* item);
+	void RemoveAt(int index);
+	int GetSelectedIndex();
 	SelectionBoxItem* GetItem(int index) { return items[index]; }
 
 	SelectionBoxItem* GetSelectedItem();

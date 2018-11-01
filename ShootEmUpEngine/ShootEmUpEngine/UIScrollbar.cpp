@@ -8,8 +8,8 @@ UIScrollbar::UIScrollbar(int inputX, int inputY, int inputWidth, int inputHeight
 	backRect = { x, y, width, height };
 	notchRect = { backRect.x, backRect.y + 1, backRect.w / (maxVal - minVal) , backRect.h - 2 };
 
-	backColor = { 255, 255, 255, 255 };
-	notchColor = { 100, 100, 100, 255 };
+	backColor = { 70, 70, 70, 255 };
+	notchColor = { 120, 120, 120, 255 };
 	outlineColor = { 0, 0, 0, 255 };
 
 	hasBeenClicked = false;
@@ -28,7 +28,7 @@ void UIScrollbar::Update(SDL_Event* e)
 	switch (e->type)
 	{
 	case SDL_MOUSEBUTTONDOWN:
-		std::cout << "Mouse Down Detected" << std::endl;
+		//std::cout << "Mouse Down Detected" << std::endl;
 		//check if the user has clicked on the notch
 		if (hasBeenClicked == false && mouseX > notchRect.x && mouseX < notchRect.x + notchRect.w && mouseY > notchRect.y && mouseY < notchRect.y + notchRect.h)
 		{
@@ -47,7 +47,7 @@ void UIScrollbar::Update(SDL_Event* e)
 
 		break;
 	case SDL_MOUSEBUTTONUP:
-		std::cout << "Mouse Up Detected" << std::endl;
+		//std::cout << "Mouse Up Detected" << std::endl;
 		hasBeenClicked = false;
 		break;
 	}
@@ -56,6 +56,11 @@ void UIScrollbar::Update(SDL_Event* e)
 	{
 		notchRect.x = mouseX - (notchRect.w / 2);
 	}
+
+
+	//clamp x position to it's boundaries
+	if (notchRect.x < backRect.x + 1) notchRect.x = backRect.x + 1;
+	if (notchRect.x + notchRect.w > backRect.x + backRect.w - 1) notchRect.x = (backRect.x + backRect.w) - notchRect.w - 1;
 }
 
 void UIScrollbar::Draw()

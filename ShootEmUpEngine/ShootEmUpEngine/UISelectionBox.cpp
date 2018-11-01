@@ -22,10 +22,8 @@ void UISelectionBox::Init()
 	outlineColor = { 0, 0, 0, 255 };
 
 	//initialize text color
-	textColor = { 0, 0, 0, 255 };
-	highlightColor = { 49, 112, 214, 255 };
-	//highlightColor = { 81, 99, 188, 255 };
-	
+	textColor = { 50, 50, 50, 255 };
+	highlightColor = { 49, 112, 214, 255 };	
 
 	selectedID = -1;//-1 identifies that nothing is selected.
 
@@ -36,6 +34,23 @@ void UISelectionBox::Init()
 void UISelectionBox::AddItem(SelectionBoxItem* item)
 {
 	items.push_back(item);
+}
+
+void UISelectionBox::RemoveAt(int index)
+{
+	if (index >= 0)
+	{
+		items.erase(items.begin() + index, items.begin() + index + 1);
+		
+		if (index == selectedID) selectedID--;
+		if (selectedID <= -1 && items.size() >= 1) selectedID = 0;
+		
+	}
+}
+
+int UISelectionBox::GetSelectedIndex()
+{
+	return selectedID;
 }
 
 SelectionBoxItem* UISelectionBox::CheckSelected(int inputX, int inputY)
@@ -95,6 +110,16 @@ void UISelectionBox::Update(SDL_Event *e)
 
 void UISelectionBox::Draw()
 {
+	//draw any gameobjects contained within if necessary
+	for (int i = 0; i < items.size(); i++)
+	{
+		if (items[i]->isGameObject)
+		{
+			items[i]->gameObject->Draw();
+		}
+	}
+
+
 	SDL_SetRenderDrawColor(renderer, backColor1.r, backColor1.g, backColor1.b, backColor1.a);//set color to fill color
 	SDL_RenderFillRect(renderer, &backRect);//Draw background rectangle
 

@@ -7,7 +7,7 @@ EngineManager::EngineManager()
 	Init("Game Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, false);
 
 	//Init UI Manager
-	_UIManager = new UIManager(window, renderer);
+	_UIManager = new UIManager(&gameIsRunning, window, renderer);
 
 	//Sound Manager
 	_SoundManager = SoundManager::getInstance();
@@ -15,7 +15,7 @@ EngineManager::EngineManager()
 
 void EngineManager::Init(const char* name, int xPosition, int yPosition, int width, int height, bool isFullscreen)
 {
-	backColor.r = 200; backColor.g = 200; backColor.b = 255; backColor.a = 255;
+	backColor = { 200, 200, 255, 255 };
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0 && TTF_Init() == 0)
 	{
@@ -29,6 +29,8 @@ void EngineManager::Init(const char* name, int xPosition, int yPosition, int wid
 		SDL_SetRenderDrawColor(renderer, backColor.r, backColor.g, backColor.b, backColor.a);
 
 		gameIsRunning = true;
+
+		//SDL_SetWindowBordered(window, SDL_FALSE);
 	}
 	else
 	{
@@ -55,7 +57,7 @@ void EngineManager::Update()
 	SDL_Event* e = new SDL_Event;
 	SDL_PollEvent(e);
 
-	if (e->type == SDL_QUIT)//if the 'X' button in the top right is pressed, flag the game up to be not running.
+	if (e->type == SDL_QUIT)//if the 'X' button in the top right is pressed, flag the app to be not running, which will close the application.
 	{
 		gameIsRunning = false;
 	}

@@ -45,18 +45,16 @@ void UITextBox::Init()
 
 
 	//initialize back color
-	backColor = { 255, 255, 255, 255 };
+	backColor = { 70, 70, 70, 255 };
 	//initialize outline color
-	boundColor = { 130, 130, 130, 255 };
+	boundColor = { 0, 0, 0, 255 };
 	//initialize text color
-	textColor = { 0, 0, 0, 255 };
+	textColor = { 200, 200, 200, 255 };
 
 	//initialize the square that will be drawed(?) in
 	boxSquare.x = x; boxSquare.y = y;
 	boxSquare.h = height;
 	boxSquare.w = width;
-
-	canType = true;
 
 	//default isSelected to false as the text box will not be selected upon startup
 	isSelected = false;
@@ -93,6 +91,12 @@ void UITextBox::Update(SDL_Event* e)
 		{
 			timeCounter = 0;
 		}
+
+		backColor = { 75, 75, 75, 255 };
+	}
+	else
+	{
+		backColor = { 70, 70, 70, 255 };
 	}
 
 
@@ -115,11 +119,10 @@ void UITextBox::UpdateText(SDL_Event* e)
 		if (e->key.keysym.sym == SDLK_BACKSPACE)
 		{
 			text = text.substr(0, text.size() - 1);
-			canType = true;//if the user deletes a letter, they will now be able to type.
 		}
 		else if (e->key.keysym.sym == SDLK_SPACE)
 		{
-			if (canType) { text = text + ' '; }
+			text = text + ' ';
 		}
 		else
 		{
