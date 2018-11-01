@@ -70,7 +70,7 @@ void EngineManager::Update()
 		}
 		if (e->key.keysym.sym == SDLK_DOWN)
 		{
-			
+			_FileDialog->SaveFile();
 		}
 	}
 

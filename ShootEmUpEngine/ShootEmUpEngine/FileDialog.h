@@ -11,6 +11,8 @@ public:
 	
 	FileDialog();
 	 void GetOpenFile();
+	 void SaveFile();
+	 void CheckErrors();
 	 ~FileDialog();
 };
 #endif

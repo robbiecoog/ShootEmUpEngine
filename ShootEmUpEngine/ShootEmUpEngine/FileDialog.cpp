@@ -15,7 +15,7 @@ void FileDialog::GetOpenFile()
 	ZeroMemory(&targetFile, sizeof(targetFile));
 	ZeroMemory(&file, sizeof(file));
 	file.lStructSize = sizeof(file);
-	file.hwndOwner = NULL; //need to put window handler here
+	file.hwndOwner = NULL; //window handler if needed
 	file.lpstrFilter = "All Files\0*.*\0\0"; //filters what type of file you want to be able to load - this will have no filters for now - can filter it to text files if prefered
 	file.lpstrFile = targetFile; //file userloads
 	file.nMaxFile = MAX_PATH;
@@ -32,6 +32,41 @@ void FileDialog::GetOpenFile()
 	}
 	else
 	{
+		CheckErrors();
+	}
+}
+
+void FileDialog::SaveFile()
+{
+	char saveFile[MAX_PATH];
+	OPENFILENAME file;
+
+	ZeroMemory(&saveFile, sizeof(saveFile));
+	ZeroMemory(&file, sizeof(file));
+	file.lStructSize = sizeof(file);
+	file.hwndOwner = NULL; //window handler if needed
+	file.lpstrFilter = "All Files\0*.*\0\0"; //filters what type of file you want to be able to load - this will have no filters for now - can filter it to text files if prefered
+	file.lpstrFile = saveFile; //file userloads
+	file.nMaxFile = MAX_PATH;
+	file.lpstrTitle = "Select a File..."; //Dialog File title 
+										  /*OFN_DONTADDTORECENT prevents the system from adding a link to the selected file in the
+										  system directory that contains the users most recently used documents
+										  OFN_FILEMUSTEXIST prevents the user from typing filenames of files that dont exist in the file name entry field
+										  if user enters an invalid name the file dialog will display a warning in the message box*/
+	file.Flags = OFN_DONTADDTORECENT | OFN_FILEMUSTEXIST;
+
+	if (GetSaveFileNameA(&file))
+	{
+		cout << "You saved this file \ " << saveFile << "\"\n"; //Gets file user open name
+	}
+	else
+	{
+		CheckErrors();
+	}
+}
+
+void FileDialog::CheckErrors()
+{
 		//this is where all the checks will be -  this will narrow any errors down to a user cancellation if none other errors occur.
 		switch (CommDlgExtendedError())
 		{
@@ -62,7 +97,6 @@ void FileDialog::GetOpenFile()
 			//Attempt to subclass a list box failed due to sufficent memory not being available.
 		case FNERR_SUBCLASSFAILURE: cout << "FNERR_SUBCLASSFAILURE: 0x3001. Attempt to subclass a list box failed."; break;
 		}
-	}
 }
 FileDialog::~FileDialog()
 {
