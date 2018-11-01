@@ -66,7 +66,7 @@ void EngineManager::Update()
 	{
 		if (e->key.keysym.sym == SDLK_UP)
 		{
-			
+			_FileDialog->GetOpenFile();
 		}
 		if (e->key.keysym.sym == SDLK_DOWN)
 		{
