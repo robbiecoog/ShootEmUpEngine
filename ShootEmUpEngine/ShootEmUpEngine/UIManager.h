@@ -6,6 +6,7 @@
 #include "UISelectionBox.h"
 #include "UIButton.h"
 #include "Common.h"
+#include "FileDialog.h"
 #include <vector>
 #include <iostream>
 
@@ -45,5 +46,6 @@ private:
 	std::vector<UIButton*> UIButtons;
 
 	TTF_Font* defaultFont;
+	FileDialog* _FileDialog;
 
 };

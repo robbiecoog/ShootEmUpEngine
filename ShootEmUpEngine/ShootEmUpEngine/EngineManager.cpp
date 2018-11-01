@@ -62,17 +62,6 @@ void EngineManager::Update()
 	{
 		gameIsRunning = false;
 	}
-	if (e->type == SDL_KEYDOWN)
-	{
-		if (e->key.keysym.sym == SDLK_UP)
-		{
-			_FileDialog->GetOpenFile();
-		}
-		if (e->key.keysym.sym == SDLK_DOWN)
-		{
-			_FileDialog->SaveFile();
-		}
-	}
 
 
 	_UIManager->Update(e);//As UI elements will need info regarding key presses, this is passed to the update. If an object doesnt need this, dont bother passing these through.
