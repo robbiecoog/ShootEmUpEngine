@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animator.cpp" />
     <ClCompile Include="EngineManager.cpp" />
     <ClCompile Include="FileDialog.cpp" />
     <ClCompile Include="FileLoader.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="UITextBox.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animator.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="EngineManager.h" />
     <ClInclude Include="FileDialog.h" />
