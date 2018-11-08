@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <Windows.h>
+
 #ifndef _FILE_DIALOG_H_
 #define _FILE_DIALOG_H_
 
