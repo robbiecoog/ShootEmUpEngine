@@ -3,7 +3,6 @@
 #include "SDL_TTF.h"
 #include "UIManager.h"
 #include "SoundManager.h"
-#include "FileLoader.h"
 #include "FileDialog.h"
 
 
@@ -35,7 +34,6 @@ private:
 
 	SoundManager* _SoundManager;
 	UIManager * _UIManager;
-	FileLoader* _FileLoader;
 	FileDialog* _FileDialog;
 
 	SDL_Color backColor;

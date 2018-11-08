@@ -1,4 +1,5 @@
-﻿  FileDialog.cpp
-c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengine\filedialog.cpp(33): warning C4129: ' ': unrecognized character escape sequence
-c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengine\filedialog.cpp(93): warning C4129: ' ': unrecognized character escape sequence
+﻿  EngineManager.cpp
+  UIManager.cpp
+c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengine\uimanager.cpp(133): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
   ShootEmUpEngine.vcxproj -> C:\Users\j015791e\Documents\GitHub\ShootEmUpEngine\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe

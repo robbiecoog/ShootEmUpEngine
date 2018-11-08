@@ -18,5 +18,7 @@ public:
 	 void GetOpenFile();
 	 void SaveFile();
 	 void CheckErrors();
+
+	 string GetFile();
 };
 #endif

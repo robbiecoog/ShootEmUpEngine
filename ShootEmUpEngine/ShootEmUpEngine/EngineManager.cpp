@@ -40,11 +40,10 @@ EngineManager::~EngineManager()
 {
 	_UIManager->~UIManager();
 	_UIManager->~UIManager();
-	_FileLoader->~FileLoader();
 
 	delete _UIManager;
 	delete _SoundManager;
-	delete _FileLoader;
+	delete _FileDialog;
 }
 
 void EngineManager::HandleEvents()
@@ -62,7 +61,6 @@ void EngineManager::Update()
 	{
 		gameIsRunning = false;
 	}
-
 
 	_UIManager->Update(e);//As UI elements will need info regarding key presses, this is passed to the update. If an object doesnt need this, dont bother passing these through.
 	_SoundManager->Update(e);

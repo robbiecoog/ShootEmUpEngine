@@ -22,6 +22,7 @@ void FileDialog::GetOpenFile()
 	file.lpstrFile = targetFile; //file userloads
 	file.nMaxFile = MAX_PATH;
 	file.lpstrTitle = "Select a File..."; //Dialog File title 
+
 	/*OFN_DONTADDTORECENT prevents the system from adding a link to the selected file in the
 	system directory that contains the users most recently used documents
 	OFN_FILEMUSTEXIST prevents the user from typing filenames of files that dont exist in the file name entry field
@@ -97,6 +98,37 @@ void FileDialog::SaveFile()
 	{
 		CheckErrors();
 	}
+}
+
+string FileDialog::GetFile()
+{
+	char file[MAX_PATH];
+	OPENFILENAME fileDialog;
+
+	ZeroMemory(&file, sizeof(file));
+	ZeroMemory(&fileDialog, sizeof(fileDialog));
+	fileDialog.lStructSize = sizeof(fileDialog);
+	fileDialog.hwndOwner = NULL; //window handler if needed
+	fileDialog.lpstrFilter = "All Files\0*.*\0\0"; //filters what type of file you want to be able to load - this will have no filters for now - can filter it to text files if prefered
+	fileDialog.lpstrFile = file; //file userloads
+	fileDialog.nMaxFile = MAX_PATH;
+	fileDialog.lpstrTitle = "Select a File..."; //Dialog File title 
+
+										  /*OFN_DONTADDTORECENT prevents the system from adding a link to the selected file in the
+										  system directory that contains the users most recently used documents
+										  OFN_FILEMUSTEXIST prevents the user from typing filenames of files that dont exist in the file name entry field
+										  if user enters an invalid name the file dialog will display a warning in the message box*/
+	fileDialog.Flags = OFN_DONTADDTORECENT | OFN_FILEMUSTEXIST;
+
+	if (GetOpenFileNameA(&fileDialog))
+	{
+		cout << "You chose the file \ " << file << "\"\n"; //Gets file user open name
+	}
+	else
+	{
+		CheckErrors();
+	}
+	return file;
 }
 
 void FileDialog::CheckErrors()

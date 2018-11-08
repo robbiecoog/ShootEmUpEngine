@@ -105,10 +105,6 @@ UIManager::~UIManager()
 	for (unsigned int i = 0; i < UIButtons.size(); i++) { UIButtons[i]->~UIButton(); }
 }
 
-void UIManager::ShowFileDialog()
-{
-}
-
 void UIManager::Update(SDL_Event* e)
 {
 	//obtain mouse positions and store them
@@ -155,9 +151,9 @@ void UIManager::Update(SDL_Event* e)
 				UITextBoxes[setI]->SetSelected(true);
 			}
 		}
-		else if (e->key.keysym.sym == SDLK_4)
+		else if (e->key.keysym.sym == SDLK_UP)
 		{
-			ShowFileDialog();
+			_FileDialog->GetFile();
 		}
 		break;
 	}
