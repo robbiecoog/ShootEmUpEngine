@@ -1,2 +1,4 @@
-﻿  Animator.cpp
+﻿  FileDialog.cpp
+c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengine\filedialog.cpp(33): warning C4129: ' ': unrecognized character escape sequence
+c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengine\filedialog.cpp(93): warning C4129: ' ': unrecognized character escape sequence
   ShootEmUpEngine.vcxproj -> C:\Users\j015791e\Documents\GitHub\ShootEmUpEngine\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe

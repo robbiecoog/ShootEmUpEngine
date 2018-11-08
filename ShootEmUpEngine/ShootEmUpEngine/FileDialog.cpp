@@ -11,6 +11,8 @@ void FileDialog::GetOpenFile()
 {
 	char targetFile[MAX_PATH];
 	OPENFILENAME file;
+	ifstream dataFile;
+	string data;
 
 	ZeroMemory(&targetFile, sizeof(targetFile));
 	ZeroMemory(&file, sizeof(file));
@@ -29,6 +31,20 @@ void FileDialog::GetOpenFile()
 	if (GetOpenFileNameA(&file))
 	{
 		cout << "You chose the file \ " << targetFile << "\"\n"; //Gets file user open name
+		dataFile.open(targetFile);
+
+		if (dataFile.is_open())
+		{
+			while (getline(dataFile, data))
+			{
+				cout << data << '\n';
+			}
+			dataFile.close();
+		}
+		else
+		{
+			cout << "Unable to open file";
+		}
 	}
 	else
 	{
@@ -53,11 +69,29 @@ void FileDialog::SaveFile()
 										  system directory that contains the users most recently used documents
 										  OFN_FILEMUSTEXIST prevents the user from typing filenames of files that dont exist in the file name entry field
 										  if user enters an invalid name the file dialog will display a warning in the message box*/
-	file.Flags = OFN_DONTADDTORECENT | OFN_FILEMUSTEXIST;
+	file.Flags = OFN_DONTADDTORECENT;
+
+
 
 	if (GetSaveFileNameA(&file))
 	{
-		cout << "You saved this file \ " << saveFile << "\"\n"; //Gets file user open name
+		ofstream fileToOpen;
+
+		//check if '.proj' is added at the end of the filename
+		std::string fileName = saveFile;
+		if (fileName[fileName.size() - 1] == 'j' && fileName[fileName.size() - 2] == 'o' && fileName[fileName.size() - 3] == 'r' && fileName[fileName.size() - 4] == 'p' && fileName[fileName.size() - 5] == '.') {}
+		else
+		{
+			fileName.append(".proj");
+		}
+		for (int i = 0; i < fileName.size(); i++){saveFile[i] = fileName[i];}
+
+		fileToOpen.open(saveFile);
+		fileToOpen << "Writing to file...\n";
+		fileToOpen << "WOOHOOOOOOO \n";
+		fileToOpen.close();
+		cout << " You saved this file \ " << saveFile << "\"\n"; //Gets file user open name
+
 	}
 	else
 	{
