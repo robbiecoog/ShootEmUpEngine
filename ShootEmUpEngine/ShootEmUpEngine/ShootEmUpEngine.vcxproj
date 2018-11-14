@@ -153,7 +153,6 @@
     <ClCompile Include="Animator.cpp" />
     <ClCompile Include="EngineManager.cpp" />
     <ClCompile Include="FileDialog.cpp" />
-    <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="UIButton.cpp" />
@@ -167,7 +166,6 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="EngineManager.h" />
     <ClInclude Include="FileDialog.h" />
-    <ClInclude Include="FileLoader.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="UIButton.h" />
     <ClInclude Include="UISelectionBox.h" />
