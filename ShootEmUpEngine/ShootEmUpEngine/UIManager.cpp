@@ -92,8 +92,6 @@ UIManager::UIManager(SDL_Window *window, SDL_Renderer *gameRenderer) : gameWindo
 	levelSelectionBox->AddItem(new SelectionBoxItem{ "Super Mega Awesome Secret Level 1" });
 	levelSelectionBox->AddItem(new SelectionBoxItem{ "Level 6" });
 
-	_Animator = new Animator(gameRenderer, window);
-
 
 }
 
@@ -177,9 +175,16 @@ void UIManager::Update(SDL_Event* e)
 	}
 	if (UIButtons[4]->CheckClick())//if add sprite sheet button is clicked
 	{
-		
+		Animators.push_back(new Animator(renderer, gameWindow));
 	}
-	_Animator->Update(e);
+
+
+
+	for (int i = 0; i < Animators.size(); i++)
+	{
+		Animators[i]->Update(e);
+	}
+
 	//for each UI element, we will check if the mouse is contained within this and will tell the object that it is selected if so.
 	if (SDL_GetMouseState(NULL, NULL) == SDL_BUTTON(SDL_BUTTON_LEFT))//if the left button is clicked
 	{
@@ -262,6 +267,5 @@ void UIManager::Draw()
 	for (unsigned int i = 0; i < UILabels.size(); i++) { UILabels[i]->Draw(); }
 	for (unsigned int i = 0; i < UISelectionBoxes.size(); i++) { UISelectionBoxes[i]->Draw(); }
 	for (unsigned int i = 0; i < UIButtons.size(); i++) { UIButtons[i]->Draw(); }
-
-	_Animator->Draw();
+	for (unsigned int i = 0; i < Animators.size(); i++){ Animators[i]->Draw(); }
 }

@@ -45,9 +45,10 @@ private:
 	std::vector<UILabel*> UILabels;
 	std::vector<UISelectionBox*> UISelectionBoxes;
 	std::vector<UIButton*> UIButtons;
+	std::vector<Animator*> Animators;
+
 
 	TTF_Font* defaultFont;
 	FileDialog* _FileDialog;
-	Animator* _Animator;
 
 };
