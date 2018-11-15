@@ -180,7 +180,6 @@ void UIManager::Update(SDL_Event* e)
 		
 	}
 	_Animator->Update(e);
-
 	//for each UI element, we will check if the mouse is contained within this and will tell the object that it is selected if so.
 	if (SDL_GetMouseState(NULL, NULL) == SDL_BUTTON(SDL_BUTTON_LEFT))//if the left button is clicked
 	{

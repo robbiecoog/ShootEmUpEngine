@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
+#include "FileDialog.h"
 
 class Animator
 {
@@ -13,6 +14,7 @@ public:
 
 	void Draw();
 
+	FileDialog* _FileDialog;
 private:
 	SDL_Surface* spriteImages;
 	SDL_Texture* spriteSheetTexture;

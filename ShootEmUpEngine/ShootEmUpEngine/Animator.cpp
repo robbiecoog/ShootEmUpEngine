@@ -6,10 +6,8 @@ Animator::Animator(SDL_Renderer* gameRenderer, SDL_Window* gameWindow)
 {
 	renderer = gameRenderer;
 	window = gameWindow;
-	std::string dir = SDL_GetBasePath();
-	dir += "Assets\\";
-	dir += "spritesheet2.png";
-	spriteImages = IMG_Load(dir.c_str());
+
+	spriteImages = IMG_Load(_FileDialog->GetFile().c_str());
 	spriteSheetTexture = SDL_CreateTextureFromSurface(gameRenderer, spriteImages);
 
 	std::cout << "Error?: " << SDL_GetError();

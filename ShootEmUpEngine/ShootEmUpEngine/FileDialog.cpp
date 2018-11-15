@@ -104,6 +104,8 @@ string FileDialog::GetFile()
 {
 	char file[MAX_PATH];
 	OPENFILENAME fileDialog;
+	ifstream spriteFile;
+	
 
 	ZeroMemory(&file, sizeof(file));
 	ZeroMemory(&fileDialog, sizeof(fileDialog));
@@ -123,6 +125,7 @@ string FileDialog::GetFile()
 	if (GetOpenFileNameA(&fileDialog))
 	{
 		cout << "You chose the file \ " << file << "\"\n"; //Gets file user open name
+		spriteFile.open(file);
 	}
 	else
 	{
