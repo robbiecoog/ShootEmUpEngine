@@ -64,6 +64,8 @@ UIManager::UIManager(SDL_Window *window, SDL_Renderer *gameRenderer) : gameWindo
 	UIButtons.push_back(OpenFileDialogBtn);
 	UIButton* SaveFileDialogBtn = new UIButton(OpenFileDialogBtn->x + OpenFileDialogBtn->width, topRect.y, 60, 30, "Save", renderer, defaultFont);
 	UIButtons.push_back(SaveFileDialogBtn);
+	UIButton* AddSpriteSheetBtn = new UIButton(700 + (sideRect.w - sideRect.w / 6), 250 + borderSize, 130, 20, "Add SpriteSheet", renderer, defaultFont);
+	UIButtons.push_back(AddSpriteSheetBtn);
 
 	//Create Selection Boxes
 	UISelectionBox* objectSelectionBox = new UISelectionBox(sideRect.x + (sideRect.w / 2) + borderSize, AddObjectBtn->y + AddObjectBtn->height + borderSize, (sideRect.w / 2) - (borderSize*2), sideRect.h - AddObjectBtn->height - (borderSize * 3), renderer, defaultFont);
@@ -170,6 +172,10 @@ void UIManager::Update(SDL_Event* e)
 	if (UIButtons[3]->CheckClick())//if + button is clicked
 	{
 		_FileDialog->SaveFile();
+	}
+	if (UIButtons[4]->CheckClick())//if + button is clicked
+	{
+		
 	}
 
 	//for each UI element, we will check if the mouse is contained within this and will tell the object that it is selected if so.
