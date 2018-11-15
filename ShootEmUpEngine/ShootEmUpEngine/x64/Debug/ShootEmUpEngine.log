@@ -1,3 +1,2 @@
-﻿  UIManager.cpp
-c:\users\j015791e\documents\github\shootemupengine\shootemupengine\shootemupengine\uimanager.cpp(135): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+﻿  Animator.cpp
   ShootEmUpEngine.vcxproj -> C:\Users\j015791e\Documents\GitHub\ShootEmUpEngine\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe

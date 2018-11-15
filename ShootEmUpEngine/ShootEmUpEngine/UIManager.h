@@ -7,6 +7,7 @@
 #include "UIButton.h"
 #include "Common.h"
 #include "FileDialog.h"
+#include "Animator.h"
 #include <vector>
 #include <iostream>
 
@@ -47,5 +48,6 @@ private:
 
 	TTF_Font* defaultFont;
 	FileDialog* _FileDialog;
+	Animator* _Animator;
 
 };
