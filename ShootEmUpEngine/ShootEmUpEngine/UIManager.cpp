@@ -41,13 +41,17 @@ UIManager::UIManager(SDL_Window *window, SDL_Renderer *gameRenderer) : gameWindo
 	UILabel* heightLabel = new UILabel(widthLabel->x, widthLabel->y + widthLabel->height + borderSize, "Height: ", renderer, 0, defaultFont);
 	UITextBox* heightTextBox = new UITextBox(heightLabel->x + heightLabel->width, heightLabel->y, (sideRect.x + (sideRect.w / 2)) - (heightLabel->x + heightLabel->width) - borderSize, "", renderer, defaultFont);
 
+	UILabel* framesLabel = new UILabel(heightLabel->x, heightLabel->y + heightLabel->height + borderSize, "Frames: ", renderer, 0, defaultFont);
+	UITextBox* framesTextBox = new UITextBox(framesLabel->x + framesLabel->width, framesLabel->y, (sideRect.x + (sideRect.w / 2)) - (framesLabel->x + framesLabel->width) - borderSize, "", renderer, defaultFont);
+
 	//add labels to list
 	UILabels.push_back(detailsLabel);
 	UILabels.push_back(objectNameLabel);
 	UILabels.push_back(xPosLabel);
 	UILabels.push_back(yPosLabel);
 	UILabels.push_back(widthLabel);
-	UILabels.push_back(heightLabel);	
+	UILabels.push_back(heightLabel);
+	UILabels.push_back(framesLabel);
 
 	//add textboxes to UIList
 	UITextBoxes.push_back(objectNameTextBox);
@@ -55,6 +59,7 @@ UIManager::UIManager(SDL_Window *window, SDL_Renderer *gameRenderer) : gameWindo
 	UITextBoxes.push_back(yPosTextBox);
 	UITextBoxes.push_back(widthTextBox);
 	UITextBoxes.push_back(heightTextBox);
+	UITextBoxes.push_back(framesTextBox);
 
 	UIButton* AddObjectBtn = new UIButton(sideRect.x + (sideRect.w - sideRect.w/6), sideRect.y + borderSize, 20, 20, "+", renderer, defaultFont);
 	UIButtons.push_back(AddObjectBtn);
