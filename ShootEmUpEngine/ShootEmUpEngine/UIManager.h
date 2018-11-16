@@ -8,6 +8,7 @@
 #include "Common.h"
 #include "FileDialog.h"
 #include "Animator.h"
+#include "SoundManager.h"
 #include <vector>
 #include <iostream>
 
@@ -25,9 +26,6 @@ public:
 	void Draw();
 
 private:
-
-	void ShowFileDialog();
-
 	SDL_Window *gameWindow;
 	SDL_Renderer *renderer;
 
@@ -46,9 +44,11 @@ private:
 	std::vector<UISelectionBox*> UISelectionBoxes;
 	std::vector<UIButton*> UIButtons;
 	std::vector<Animator*> Animators;
+	//std::vector<SoundManager*> SoundManagers;
 
 
 	TTF_Font* defaultFont;
 	FileDialog* _FileDialog;
+	SoundManager* _SoundManager;
 
 };

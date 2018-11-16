@@ -72,7 +72,9 @@ SoundManager::~SoundManager()
 
 void SoundManager::Update(SDL_Event* e)
 {
-	
+}
+void SoundManager::Draw()
+{
 }
 
 //Plays the music file 

@@ -71,6 +71,8 @@ UIManager::UIManager(SDL_Window *window, SDL_Renderer *gameRenderer) : gameWindo
 	UIButtons.push_back(SaveFileDialogBtn);
 	UIButton* AddSpriteSheetBtn = new UIButton(700 + (sideRect.w - sideRect.w / 6), 250 + borderSize, 130, 20, "Add SpriteSheet", renderer, defaultFont);
 	UIButtons.push_back(AddSpriteSheetBtn);
+	UIButton* AddBackgroundMusicBtn = new UIButton(AddSpriteSheetBtn->x + AddSpriteSheetBtn->width, AddSpriteSheetBtn->y + borderSize, 130, 20, "Add Music", renderer, defaultFont);
+	UIButtons.push_back(AddBackgroundMusicBtn);
 
 	//Create Selection Boxes
 	UISelectionBox* objectSelectionBox = new UISelectionBox(sideRect.x + (sideRect.w / 2) + borderSize, AddObjectBtn->y + AddObjectBtn->height + borderSize, (sideRect.w / 2) - (borderSize*2), sideRect.h - AddObjectBtn->height - (borderSize * 3), renderer, defaultFont);
@@ -182,7 +184,9 @@ void UIManager::Update(SDL_Event* e)
 	{
 		Animators.push_back(new Animator(renderer, gameWindow));
 	}
-
+	if (UIButtons[5]->CheckClick())//if add music button is clicked
+	{
+	}
 
 
 	for (int i = 0; i < Animators.size(); i++)

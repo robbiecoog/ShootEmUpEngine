@@ -7,6 +7,8 @@
 #include <SDL_mixer.h>
 #include <map>
 #include <iostream>
+#include "FileDialog.h"
+
 
 using namespace::std;
 
@@ -26,9 +28,11 @@ public:
 	~SoundManager();
 
 	void Update(SDL_Event* e);
+	void Draw();
 
 	Mix_Music* GetMusic(string filename);
 	Mix_Chunk* GetSFX(string filename);
+	FileDialog* _FileDialog;
 
 	static SoundManager* getInstance();
 

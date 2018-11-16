@@ -15,6 +15,7 @@ public:
 	void Draw();
 
 	FileDialog* _FileDialog;
+
 private:
 	SDL_Surface* spriteImages;
 	SDL_Texture* spriteSheetTexture;

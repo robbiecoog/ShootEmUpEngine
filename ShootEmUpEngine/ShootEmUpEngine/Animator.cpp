@@ -17,7 +17,6 @@ Animator::Animator(SDL_Renderer* gameRenderer, SDL_Window* gameWindow)
 
 	srcRect = {  (int)(sprite * 160), 0, 160, 479 };
 	destRect = { 10,10,32,64 };
-
 }
 
 
