@@ -2,29 +2,27 @@
   GameObject.cpp
   main.cpp
   SoundManager.cpp
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\soundmanager.cpp(16): warning C4474: 'printf' : too many arguments passed for format string
-  c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\soundmanager.cpp(16): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\soundmanager.cpp(34): warning C4474: 'printf' : too many arguments passed for format string
-  c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\soundmanager.cpp(34): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\soundmanager.cpp(55): warning C4474: 'printf' : too many arguments passed for format string
-  c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\soundmanager.cpp(55): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\soundmanager.cpp(52): warning C4101: 'event': unreferenced local variable
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\soundmanager.cpp(16): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\robbie\documents\github\shootemupengine\shootemupengine\soundmanager.cpp(16): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\soundmanager.cpp(34): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\robbie\documents\github\shootemupengine\shootemupengine\soundmanager.cpp(34): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\soundmanager.cpp(55): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\robbie\documents\github\shootemupengine\shootemupengine\soundmanager.cpp(55): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\soundmanager.cpp(52): warning C4101: 'event': unreferenced local variable
   UIButton.cpp
   UIDragDrop.cpp
   UIScrollbar.cpp
   UISelectionBox.cpp
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\uiselectionbox.cpp(125): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\uiselectionbox.cpp(164): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\uiselectionbox.cpp(125): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\uiselectionbox.cpp(170): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   UILabel.cpp
   UIManager.cpp
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\uimanager.cpp(156): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\uimanager.cpp(219): warning C4101: 'osjad': unreferenced local variable
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\uimanager.cpp(156): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\uimanager.cpp(219): warning C4101: 'osjad': unreferenced local variable
   UITextBox.cpp
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\uitextbox.cpp(36): warning C4150: deletion of pointer to incomplete type '_TTF_Font'; no destructor called
-  c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\sdl2_ttf-2.0.14\include\sdl_ttf.h(86): note: see declaration of '_TTF_Font'
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\uitextbox.cpp(74): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\uitextbox.cpp(90): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\uitextbox.cpp(112): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\uitextbox.cpp(73): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\uitextbox.cpp(89): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\uitextbox.cpp(111): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
   Generating Code...
-c:\users\c017916e\documents\github\newrobbie\shootemupengine\shootemupengine\soundmanager.cpp(21): warning C4715: 'SoundManager::GetMusic': not all control paths return a value
-  ShootEmUpEngine.vcxproj -> C:\Users\c017916e\Documents\GitHub\NewRobbie\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe
+c:\users\robbie\documents\github\shootemupengine\shootemupengine\soundmanager.cpp(21): warning C4715: 'SoundManager::GetMusic': not all control paths return a value
+  ShootEmUpEngine.vcxproj -> C:\Users\Robbie\Documents\Github\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe

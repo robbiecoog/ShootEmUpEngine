@@ -33,7 +33,6 @@ UITextBox::UITextBox(int xPos, int yPos, int boxWidth, std::string inputText, SD
 
 UITextBox::~UITextBox()
 {
-	delete (defaultFont);
 }
 
 bool UITextBox::IsUpdated()

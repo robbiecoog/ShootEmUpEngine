@@ -154,6 +154,12 @@ void UISelectionBox::Update(SDL_Event *e)
 
 			items[i]->gameObject->Update(e);
 
+			if (items[i]->gameObject->IsUpdated())
+			{
+				newSelected = true;
+				selectedID = i;
+			}
+
 			if (items[i]->gameObject->isClicked) break;
 		}
 	}

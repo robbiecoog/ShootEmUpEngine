@@ -249,6 +249,11 @@ void UIManager::Update(SDL_Event* e)
 				else if (UITextBoxes[5]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->rotation = std::atoi((UITextBoxes[5]->GetText().c_str())); }//rotation
 				break;
 			case GameObjectType::ENEMYWAVE:
+				if (UISelectionBoxes[0]->NewSelected())
+				{
+					ClearObjectDetails();
+					DisplayEnemyUI();
+				}
 				if (UITextBoxes[0]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->name = UITextBoxes[0]->GetText(); UISelectionBoxes[0]->GetSelectedItem()->name = UISelectionBoxes[0]->GetSelectedItem()->gameObject->name; }//object name
 				else if (UITextBoxes[1]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->x = std::atoi((UITextBoxes[1]->GetText().c_str())); }//x pos
 				else if (UITextBoxes[2]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->y = std::atoi((UITextBoxes[2]->GetText().c_str())); }//y pos
@@ -257,14 +262,11 @@ void UIManager::Update(SDL_Event* e)
 				else if (UITextBoxes[5]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->rotation = std::atoi((UITextBoxes[5]->GetText().c_str())); }//height
 				break;
 			case GameObjectType::BACKGROUNDMUSIC:
-				if (UITextBoxes[0]->IsUpdated()) {
-					UISelectionBoxes[0]->GetSelectedItem()->gameObject->name = UITextBoxes[0]->GetText();
-					UISelectionBoxes[0]->GetSelectedItem()->name = UISelectionBoxes[0]->GetSelectedItem()->gameObject->name;
-				}//object name
-				else if (UITextBoxes[1]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->x = std::atoi((UITextBoxes[1]->GetText().c_str())); }//x pos
-				else if (UITextBoxes[2]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->y = std::atoi((UITextBoxes[2]->GetText().c_str())); }//y pos
-				else if (UITextBoxes[3]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->width = std::atoi((UITextBoxes[3]->GetText().c_str())); }//width
-				else if (UITextBoxes[4]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->gameObject->height = std::atoi((UITextBoxes[4]->GetText().c_str())); }//height
+				if (UISelectionBoxes[0]->NewSelected()) {
+					ClearObjectDetails();
+					DisplayBGMusicUI();
+				}
+				if (UITextBoxes[0]->IsUpdated()) { UISelectionBoxes[0]->GetSelectedItem()->name = UITextBoxes[0]->GetText(); }
 				break;
 			}
 		}
@@ -301,9 +303,17 @@ void UIManager::ClearObjectDetails()
 	UILabels.clear();
 	for (int i = 0; i < UITextBoxes.size(); i++)
 	{
+		delete UITextBoxes[i];
 		UITextBoxes.erase(UITextBoxes.begin() + i);
 	}
 	UITextBoxes.clear();
+
+	//this doesnt loop through all of the buttons, as 2 buttons (as of writing this) are not part of the object details section.
+	for (int i = 2; i < UIButtons.size(); i++)
+	{
+		delete UIButtons[i];
+		UIButtons.erase(UIButtons.begin() + i);
+	}
 }
 
 void UIManager::DisplayPlayerUI()
@@ -412,6 +422,36 @@ void UIManager::DisplayEnemyUI()
 	UITextBoxes[2]->SetText(std::to_string(UISelectionBoxes[0]->GetSelectedItem()->gameObject->y));//y pos text box
 	UITextBoxes[3]->SetText(std::to_string(UISelectionBoxes[0]->GetSelectedItem()->gameObject->width));//width text box
 	UITextBoxes[4]->SetText(std::to_string(UISelectionBoxes[0]->GetSelectedItem()->gameObject->height));//height text box
+}
+
+void UIManager::DisplayBGMusicUI()
+{
+	int screenWidth, screenHeight;
+	SDL_GetWindowSize(gameWindow, &screenWidth, &screenHeight);
+
+	int borderSize = 10;
+
+	UILabel* detailsLabel = new UILabel(sideRect.x + (sideRect.w / 4), sideRect.y + 2, "Details", renderer, 1, defaultFont);
+
+	UILabel* objectNameLabel = new UILabel(sideRect.x + (sideRect.w / 4), detailsLabel->y + detailsLabel->height, "Object Name: ", renderer, 1, defaultFont);
+	UITextBox* objectNameTextBox = new UITextBox(sideRect.x + borderSize, objectNameLabel->y + objectNameLabel->height, (sideRect.w / 2) - (borderSize * 2), "", renderer, defaultFont);
+
+	UILabel* filePathLabel = new UILabel(detailsLabel->x, objectNameTextBox->y + objectNameTextBox->height + borderSize, "File Path:", renderer, 1, defaultFont);
+	UITextBox* filePathTextBox = new UITextBox(sideRect.x + borderSize, filePathLabel->y + filePathLabel->height + borderSize, (sideRect.w/2) - borderSize - borderSize, renderer, defaultFont);
+
+	UIButton* GetFilePathButton = new UIButton(filePathTextBox->x, filePathTextBox->y + filePathTextBox->height + borderSize, filePathTextBox->width/2 - borderSize, filePathTextBox->height, "Search..", renderer, defaultFont);
+
+	UILabels.push_back(detailsLabel);
+	UILabels.push_back(objectNameLabel);
+	UILabels.push_back(filePathLabel);
+
+	UITextBoxes.push_back(objectNameTextBox);
+	UITextBoxes.push_back(filePathTextBox);
+	
+	UIButtons.push_back(GetFilePathButton);
+
+	UITextBoxes[0]->SetText(UISelectionBoxes[0]->GetSelectedItem()->name);
+
 }
 
 void UIManager::UpdateGOUI()

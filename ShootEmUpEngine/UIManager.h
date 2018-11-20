@@ -36,6 +36,7 @@ private:
 	void ClearObjectDetails();
 	void DisplayPlayerUI();
 	void DisplayEnemyUI();
+	void DisplayBGMusicUI();
 
 	void UpdateGOUI();//updates the game object's position with the info in the UI.
 
