@@ -200,7 +200,9 @@ void UIManager::Update(SDL_Event* e)
 
 	for (int i = 0; i < Animators.size(); i++)
 	{
+		frames = stoi(UITextBoxes[6]->GetText());
 		Animators[i]->Update(e);
+		Animators[i]->SetFrames(frames);
 	}
 
 	_SoundManager->Update(e);

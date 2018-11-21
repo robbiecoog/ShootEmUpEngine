@@ -13,10 +13,6 @@ Animator::Animator(SDL_Renderer* gameRenderer, SDL_Window* gameWindow)
 	std::cout << "Error?: " << SDL_GetError();
 
 	animationTicks = SDL_GetTicks(); //gives number of milliseconds  that passed since program started
-	sprite = (animationTicks / 100) % 4;
-
-	srcRect = {  (int)(sprite * 160), 0, 160, 479 };
-	destRect = { 10,10,32,64 };
 }
 
 
@@ -29,11 +25,15 @@ Animator::~Animator()
 void Animator::Update(SDL_Event* e)
 {
 	animationTicks = SDL_GetTicks(); //gives number of milliseconds  that passed since program started
-	sprite = (animationTicks / 100) % 4;
+}
+
+void Animator::SetFrames(int frames)
+{
+	sprite = (animationTicks / 100) % frames;
 
 	srcRect = { (int)(sprite * 160), 0, 160, 479 };
 
-	if (sprite > 4)
+	if (sprite > frames)
 	{
 		sprite = 0;
 	}

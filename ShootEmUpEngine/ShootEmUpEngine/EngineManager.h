@@ -2,7 +2,6 @@
 #include "SDL.h"
 #include "SDL_TTF.h"
 #include "UIManager.h"
-#include "SoundManager.h"
 #include "FileDialog.h"
 
 
@@ -32,7 +31,6 @@ private:
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 
-	SoundManager* _SoundManager;
 	UIManager * _UIManager;
 	FileDialog* _FileDialog;
 

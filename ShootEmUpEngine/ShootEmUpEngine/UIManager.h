@@ -47,7 +47,6 @@ private:
 	std::vector<UISelectionBox*> UISelectionBoxes;
 	std::vector<UIButton*> UIButtons;
 	std::vector<Animator*> Animators;
-	std::vector<SoundManager*> SoundManagers;
 
 
 	TTF_Font* defaultFont;

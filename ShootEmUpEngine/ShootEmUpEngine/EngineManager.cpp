@@ -8,9 +8,6 @@ EngineManager::EngineManager()
 
 	//Init UI Manager
 	_UIManager = new UIManager(window, renderer);
-
-	//Sound Manager
-	//_SoundManager = SoundManager::getInstance();
 }
 
 void EngineManager::Init(const char* name, int xPosition, int yPosition, int width, int height, bool isFullscreen)
@@ -42,7 +39,6 @@ EngineManager::~EngineManager()
 	_UIManager->~UIManager();
 
 	delete _UIManager;
-	//delete _SoundManager;
 	delete _FileDialog;
 }
 
@@ -63,7 +59,6 @@ void EngineManager::Update()
 	}
 
 	_UIManager->Update(e);//As UI elements will need info regarding key presses, this is passed to the update. If an object doesnt need this, dont bother passing these through.
-	//_SoundManager->Update(e);
 
 	delete e;
 	e = nullptr;

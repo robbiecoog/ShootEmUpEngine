@@ -15,6 +15,8 @@ public:
 
 	void Draw();
 
+	void SetFrames(int frames);
+
 	FileDialog* _FileDialog;
 
 private:
