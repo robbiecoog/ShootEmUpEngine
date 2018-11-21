@@ -69,10 +69,12 @@ UIManager::UIManager(SDL_Window *window, SDL_Renderer *gameRenderer) : gameWindo
 	UIButtons.push_back(OpenFileDialogBtn);
 	UIButton* SaveFileDialogBtn = new UIButton(OpenFileDialogBtn->x + OpenFileDialogBtn->width, topRect.y, 60, 30, "Save", renderer, defaultFont);
 	UIButtons.push_back(SaveFileDialogBtn);
-	UIButton* AddSpriteSheetBtn = new UIButton(700 + (sideRect.w - sideRect.w / 6), 250 + borderSize, 130, 20, "Add SpriteSheet", renderer, defaultFont);
+	UIButton* AddSpriteSheetBtn = new UIButton(700 + (sideRect.w - sideRect.w / 6), 250, 130, 20, "Add SpriteSheet", renderer, defaultFont);
 	UIButtons.push_back(AddSpriteSheetBtn);
-	UIButton* AddBackgroundMusicBtn = new UIButton(AddSpriteSheetBtn->x + AddSpriteSheetBtn->width, AddSpriteSheetBtn->y + borderSize, 130, 20, "Add Music", renderer, defaultFont);
+	UIButton* AddBackgroundMusicBtn = new UIButton(AddSpriteSheetBtn->x, AddSpriteSheetBtn->y + AddSpriteSheetBtn->height + borderSize, 130, 20, "Add Music", renderer, defaultFont);
 	UIButtons.push_back(AddBackgroundMusicBtn);
+	UIButton* AddSFXBtn = new UIButton(AddBackgroundMusicBtn->x, AddBackgroundMusicBtn->y + AddBackgroundMusicBtn->height + borderSize, 130, 20, "Add SFX", renderer, defaultFont);
+	UIButtons.push_back(AddSFXBtn);
 
 	//Create Selection Boxes
 	UISelectionBox* objectSelectionBox = new UISelectionBox(sideRect.x + (sideRect.w / 2) + borderSize, AddObjectBtn->y + AddObjectBtn->height + borderSize, (sideRect.w / 2) - (borderSize*2), sideRect.h - AddObjectBtn->height - (borderSize * 3), renderer, defaultFont);
@@ -189,6 +191,10 @@ void UIManager::Update(SDL_Event* e)
 	if (UIButtons[5]->CheckClick())//if add music button is clicked
 	{
 		_SoundManager->PlayMusic(filename);
+	}
+	if (UIButtons[6]->CheckClick())//if add music button is clicked
+	{
+		_SoundManager->PlaySFX(filename);
 	}
 
 
