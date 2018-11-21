@@ -20,13 +20,18 @@ Animator::~Animator()
 	SDL_FreeSurface(spriteImages);
 }
 
-void Animator::Update(SDL_Event* e, int frames)
+void Animator::Update(SDL_Event* e)
 {
 	animationTicks = SDL_GetTicks(); //gives number of milliseconds  that passed since program started
+}
+
+void Animator::SetFrames(int frames)
+{
 
 	sprite = (animationTicks / 100) % frames;
 
 	srcRect = { (int)(sprite * 160), 0, 160, 479 };
+	destRect = { 10,10,32,64 };
 
 	if (sprite > frames)
 	{

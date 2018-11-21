@@ -114,6 +114,7 @@ UIManager::~UIManager()
 	for (unsigned int i = 0; i < UISelectionBoxes.size(); i++) { UISelectionBoxes[i]->~UISelectionBox(); }
 	//iterate through buyttons
 	for (unsigned int i = 0; i < UIButtons.size(); i++) { UIButtons[i]->~UIButton(); }
+	for (unsigned int i = 0; i < Animators.size(); i++) { Animators[i]->~Animator(); }
 
 	delete _SoundManager;
 }
@@ -202,13 +203,9 @@ void UIManager::Update(SDL_Event* e)
 		if (UITextBoxes[5]->GetText() != "")
 		{
 			frames = stoi(UITextBoxes[5]->GetText());
-			cout << "Frames: " + frames;
+			Animators[i]->Update(e);
+			Animators[i]->SetFrames(frames);
 		}
-		else
-		{
-			cout << "Enter Frames Amount!" << SDL_GetError();
-		}
-		Animators[i]->Update(e, frames);
 	}
 
 	_SoundManager->Update(e);
