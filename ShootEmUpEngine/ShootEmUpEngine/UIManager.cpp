@@ -99,7 +99,7 @@ UIManager::UIManager(SDL_Window *window, SDL_Renderer *gameRenderer) : gameWindo
 	levelSelectionBox->AddItem(new SelectionBoxItem{ "Super Mega Awesome Secret Level 1" });
 	levelSelectionBox->AddItem(new SelectionBoxItem{ "Level 6" });
 
-
+	_SoundManager = SoundManager::getInstance();
 }
 
 UIManager::~UIManager()
@@ -186,6 +186,7 @@ void UIManager::Update(SDL_Event* e)
 	}
 	if (UIButtons[5]->CheckClick())//if add music button is clicked
 	{
+		_SoundManager->PlayMusic(filename);
 	}
 
 
@@ -193,6 +194,8 @@ void UIManager::Update(SDL_Event* e)
 	{
 		Animators[i]->Update(e);
 	}
+
+	_SoundManager->Update(e);
 
 	//for each UI element, we will check if the mouse is contained within this and will tell the object that it is selected if so.
 	if (SDL_GetMouseState(NULL, NULL) == SDL_BUTTON(SDL_BUTTON_LEFT))//if the left button is clicked

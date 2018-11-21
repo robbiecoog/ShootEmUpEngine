@@ -28,6 +28,7 @@ public:
 private:
 	SDL_Window *gameWindow;
 	SDL_Renderer *renderer;
+	string filename;
 
 	SDL_Color uiColor;//UI Color
 	SDL_Color uiOutlineColor;//UI Color
@@ -44,7 +45,7 @@ private:
 	std::vector<UISelectionBox*> UISelectionBoxes;
 	std::vector<UIButton*> UIButtons;
 	std::vector<Animator*> Animators;
-	//std::vector<SoundManager*> SoundManagers;
+	std::vector<SoundManager*> SoundManagers;
 
 
 	TTF_Font* defaultFont;

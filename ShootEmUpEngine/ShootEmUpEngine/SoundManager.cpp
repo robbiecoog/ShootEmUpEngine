@@ -9,7 +9,7 @@ Mix_Music* SoundManager::GetMusic(string filename)
 
 	if (_music[filePath] == nullptr)
 	{
-		_music[filePath] = Mix_LoadMUS(filePath.c_str());
+		_music[filePath] = Mix_LoadMUS(_FileDialog->GetFile().c_str());
 
 		if (_music[filePath] == NULL)
 		{
@@ -58,8 +58,8 @@ SoundManager::SoundManager()
 		printf("Mixer Initialization Error: ", Mix_GetError());
 	}
 
-	PlayMusic("background.wav");
-	PlaySFX("explosion.wav");
+	//PlayMusic();
+	//PlaySFX("explosion.wav");
 }
 
 
