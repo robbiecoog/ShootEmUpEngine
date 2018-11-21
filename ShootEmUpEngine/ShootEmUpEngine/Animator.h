@@ -11,7 +11,7 @@ public:
 	Animator(SDL_Renderer* gameRenderer, SDL_Window* window);
 	~Animator();
 
-	void Update(SDL_Event* e);
+	void Update(SDL_Event* e, int frames);
 
 	void Draw();
 
