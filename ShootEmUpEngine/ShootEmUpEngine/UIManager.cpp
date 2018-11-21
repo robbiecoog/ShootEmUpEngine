@@ -112,6 +112,8 @@ UIManager::~UIManager()
 	for (unsigned int i = 0; i < UISelectionBoxes.size(); i++) { UISelectionBoxes[i]->~UISelectionBox(); }
 	//iterate through buyttons
 	for (unsigned int i = 0; i < UIButtons.size(); i++) { UIButtons[i]->~UIButton(); }
+
+	delete _SoundManager;
 }
 
 void UIManager::Update(SDL_Event* e)

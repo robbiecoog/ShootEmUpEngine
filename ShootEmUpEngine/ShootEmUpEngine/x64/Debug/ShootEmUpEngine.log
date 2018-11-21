@@ -1,3 +1,12 @@
-﻿  UIManager.cpp
-c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\uimanager.cpp(142): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+﻿  SoundManager.cpp
+c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\soundmanager.cpp(14): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\soundmanager.cpp(14): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
+c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\soundmanager.cpp(31): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\soundmanager.cpp(31): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
+c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\soundmanager.cpp(53): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\soundmanager.cpp(53): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\soundmanager.cpp(50): warning C4101: 'event': unreferenced local variable
+  UIManager.cpp
+c:\users\neil\documents\github\shootemupengine\shootemupengine\shootemupengine\uimanager.cpp(144): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
   ShootEmUpEngine.vcxproj -> C:\Users\Neil\Documents\GitHub\ShootEmUpEngine\ShootEmUpEngine\x64\Debug\ShootEmUpEngine.exe

@@ -25,6 +25,8 @@ public:
 
 	void Draw();
 
+	int frames;
+
 private:
 	SDL_Window *gameWindow;
 	SDL_Renderer *renderer;

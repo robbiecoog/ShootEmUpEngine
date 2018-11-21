@@ -1,8 +1,9 @@
 #pragma once
+#include "FileDialog.h"
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
-#include "FileDialog.h"
+
 
 class Animator
 {
@@ -28,6 +29,7 @@ private:
 
 	Uint32 animationTicks;
 	Uint32 sprite;
+
 
 };
 

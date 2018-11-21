@@ -7,8 +7,6 @@ Mix_Music* SoundManager::GetMusic(string filename)
 	filePath.append("Assets\\" + filename);
 	cout << filePath.c_str() << endl;
 
-	if (_music[filePath] == nullptr)
-	{
 		_music[filePath] = Mix_LoadMUS(_FileDialog->GetFile().c_str());
 
 		if (_music[filePath] == NULL)
@@ -17,7 +15,6 @@ Mix_Music* SoundManager::GetMusic(string filename)
 		}
 
 		return _music[filePath];
-	}
 }
 
 //Gets SFX files from the assets folder
@@ -27,16 +24,14 @@ Mix_Chunk* SoundManager::GetSFX(string filename)
 	filePath.append("Assets\\" + filename);
 	cout << filePath.c_str() << endl;
 
-	if (_SFX[filePath] == nullptr)
-	{
-		_SFX[filePath] = Mix_LoadWAV(filePath.c_str());
+		_SFX[filePath] = Mix_LoadWAV(_FileDialog->GetFile().c_str());
 
 		if (_SFX[filePath] == NULL)
 		{
 			printf("SFX Loading Error: ", filename.c_str(), Mix_GetError());
 		}
 		return _SFX[filePath];
-	}
+
 }
 
 SoundManager* SoundManager::instance = NULL;
