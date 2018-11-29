@@ -5,6 +5,9 @@ GameObject::GameObject(std::string inputName, GameObjectType inputType, int inpu
 {
 	texture = NULL;
 	SDL_Surface* loadSurface = IMG_Load(imageDir.c_str());
+
+	std::string basePath = SDL_GetBasePath();
+	spriteDir = imageDir.substr(basePath.size(), imageDir.size() - basePath.size());
 	
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 
@@ -53,6 +56,38 @@ bool GameObject::IsUpdated()
 	if(isUpdated) isUpdated = false;
 
 	return copy;
+}
+
+bool GameObject::SetNewImgFromFile(std::string fileDir)
+{
+	if (fileDir != "")
+	{
+		std::string basePath = SDL_GetBasePath();
+		spriteDir = fileDir.substr(basePath.size(), fileDir.size() - basePath.size());
+
+		bool success = false;
+		SDL_Surface* loadSurface = IMG_Load(fileDir.c_str());
+
+		SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+
+		if (loadSurface == NULL) std::cout << "Error Loading Image: " << IMG_GetError() << std::endl;
+		else
+		{
+			success = true;
+			SDL_ConvertSurfaceFormat(loadSurface, SDL_PIXELFORMAT_RGBA8888, 0);
+
+			texture = SDL_CreateTextureFromSurface(renderer, loadSurface);
+
+			SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
+
+			sourceRect = loadSurface->clip_rect;
+			width = sourceRect.w;
+			height = sourceRect.h;
+			destRect = sourceRect;
+		}
+
+		return success;
+	}
 }
 
 void GameObject::Update(SDL_Event* e)

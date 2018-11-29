@@ -57,7 +57,7 @@ void UIScrollbar::Update(SDL_Event* e)
 		notchRect.x = mouseX - (notchRect.w / 2);
 	}
 
-	value = -(notchRect.x - backRect.x);
+	value = -(notchRect.x - backRect.x) * maxVal;
 
 	//clamp x position to it's boundaries
 	if (notchRect.x < backRect.x + 1) notchRect.x = backRect.x + 1;

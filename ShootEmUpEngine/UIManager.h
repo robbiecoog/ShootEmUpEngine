@@ -1,18 +1,17 @@
 #pragma once
 #include "SDL.h"
 #include "SDL_TTF.h"
-//
 #include "UITextBox.h"
 #include "UILabel.h"
 #include "UISelectionBox.h"
 #include "UIButton.h"
 #include "UIScrollbar.h"
 #include "UIDragDrop.h"
-//
 #include "Common.h"
 #include "enums.h"
+#include "FileDialog.h"
+#include "Animator.h"
 #include "SoundManager.h"
-//
 #include <vector>
 #include <iostream>
 
@@ -56,12 +55,14 @@ private:
 	std::vector<UITextBox*> UITextBoxes;
 	std::vector<UILabel*> UILabels;
 	std::vector<UISelectionBox*> UISelectionBoxes;
+	std::vector<UIButton*> defaultUIButtons;//stores the UI buttons that do not get wiped
 	std::vector<UIButton*> UIButtons;
 	std::vector<UIScrollbar*> UIScrollbars;
 	std::vector<UIDragDrop*> UIDragDrops;
+	std::vector<Animator*> Animators;
 
 	TTF_Font* defaultFont;
-
+	FileDialog* _FileDialog;
 	bool gameIsRunning;
 
 };

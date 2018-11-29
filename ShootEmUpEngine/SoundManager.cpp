@@ -4,7 +4,19 @@
 Mix_Music* SoundManager::GetMusic(string filename)
 {
 	string filePath = SDL_GetBasePath();
-	filePath.append("Assets\\" + filename);
+
+	string baseFilePath = SDL_GetBasePath();
+
+	if (filename.substr(0, baseFilePath.size()) == baseFilePath) 
+	{
+		filePath = filename;
+	}
+	else
+	{
+		filePath.append("Assets\\" + filename);
+	}
+
+	
 	cout << filePath.c_str() << endl;
 
 	if (_music[filePath] == nullptr)
@@ -24,7 +36,21 @@ Mix_Music* SoundManager::GetMusic(string filename)
 Mix_Chunk* SoundManager::GetSFX(string filename)
 {
 	string filePath = SDL_GetBasePath();
-	filePath.append("Assets\\" + filename);
+
+	string baseFilePath = SDL_GetBasePath();
+	for (int i = 0; i < baseFilePath.size(); i++)
+	{
+		if (baseFilePath[i] != filename[i])
+		{
+			filePath.append("Assets\\" + filename);
+			break;
+		}
+		else
+		{
+			filePath = filename.c_str();
+		}
+	}
+
 	cout << filePath.c_str() << endl;
 
 	_SFX[filePath] = Mix_LoadWAV(filePath.c_str());
@@ -98,6 +124,6 @@ void SoundManager::ResumeMusic()
 //plays SFX file
 void SoundManager::PlaySFX(string filename, int loops, int channel)
 {
-	Mix_PlayChannel(-1, GetSFX(filename), 1);
+	Mix_PlayChannel(-1, GetSFX(filename), 0);
 	cout << "playing SFX" << endl;
 }

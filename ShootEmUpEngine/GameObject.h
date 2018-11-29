@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include "enums.h"
+#include "Animator.h"
 
 class GameObject
 {
@@ -20,6 +21,8 @@ public:
 
 	bool IsUpdated();
 
+	bool SetNewImgFromFile(std::string fileDir);
+
 	int x, y, modX, width, height, rotation;
 	SDL_Rect destRect;
 
@@ -28,6 +31,7 @@ public:
 	bool isClicked;
 
 	std::string name;
+	std::string spriteDir;
 
 private:
 	

@@ -3,6 +3,7 @@
 #include "SDL_TTF.h"
 #include "UIManager.h"
 #include "SoundManager.h"
+#include "FileDialog.h"
 
 
 class EngineManager
@@ -33,6 +34,8 @@ private:
 
 	SoundManager* _SoundManager;
 	UIManager * _UIManager;
+	FileDialog* _FileDialog;
+
 	SDL_Color backColor;
 
 	bool gameIsRunning = false;

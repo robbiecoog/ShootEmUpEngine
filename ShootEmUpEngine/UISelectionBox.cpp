@@ -44,8 +44,8 @@ void UISelectionBox::RemoveAt(int index)
 	{
 		items.erase(items.begin() + index, items.begin() + index + 1);
 		
-		if (index == selectedID) selectedID--;
-		if (selectedID <= -1 && items.size() >= 1) selectedID = 0;
+		if (index == selectedID) { selectedID--; newSelected = true; }
+		if (selectedID <= -1 && items.size() >= 1) { selectedID = 0; newSelected = true;}
 		
 	}
 }
@@ -172,6 +172,13 @@ int UISelectionBox::GetItemCount()
 
 void UISelectionBox::Draw()
 {
+	if (selectedID > -1 && items[selectedID]->isGameObject)
+	{
+		SDL_SetRenderDrawColor(renderer, 50, 50, 255, 255);//set color to highlight color
+		SDL_Rect outline = items[selectedID]->gameObject->destRect; 
+		outline.x -= 1; outline.y -= 1; outline.w += 2; outline.h += 2;
+		SDL_RenderDrawRect(renderer, &items[selectedID]->gameObject->destRect);//draw outline
+	}
 
 	SDL_SetRenderDrawColor(renderer, backColor1.r, backColor1.g, backColor1.b, backColor1.a);//set color to fill color
 	SDL_RenderFillRect(renderer, &backRect);//Draw background rectangle

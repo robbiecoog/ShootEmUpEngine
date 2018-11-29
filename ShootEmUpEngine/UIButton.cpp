@@ -68,8 +68,10 @@ void UIButton::Draw()
 	//draw the text
 	SDL_Surface* drawText = TTF_RenderText_Solid(defaultFont, text.c_str(), textColor);//create a surface using text & font values
 	SDL_Texture* textTex = SDL_CreateTextureFromSurface(renderer, drawText);//convert the surface to a texture so it can be drawn
+	int xPos = x + buttonRect.w/2 - drawText->clip_rect.w/2;
+	int yPos = y + buttonRect.h / 2 - drawText->clip_rect.h / 2;
 	//create a rectangle for the text to be drawn in, this will not be the rectangle used for drawing the text box itself.
-	SDL_Rect textRect = { buttonRect.x + 4, buttonRect.y - 4, drawText->w, drawText->h };
+	SDL_Rect textRect = { xPos, y, drawText->w, drawText->h };
 	SDL_RenderCopy(renderer, textTex, NULL, &textRect);
 
 	SDL_FreeSurface(drawText);
